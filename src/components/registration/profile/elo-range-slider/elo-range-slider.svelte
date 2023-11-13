@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
+	import type { TrainerProfile } from '../../../../types/trainer/trainer-profile';
 	import { RangeSlider } from '@skeletonlabs/skeleton';
 
 	export let trainerProfile: TrainerProfile;
 	let maximumTrainingLimit = 0;
 
 	onMount(() => {
-		maximumTrainingLimit = Math.ceil(Number(trainerProfile.fideRating) / 100) * 100;
+		if (trainerProfile.fideRating == null) {
+			// TODO refactor into constant
+			maximumTrainingLimit = 2800;
+		} else {
+			maximumTrainingLimit = Math.ceil(trainerProfile.fideRating / 100) * 100;
+		}
 		trainerProfile.maxTrainingRating = Math.ceil(maximumTrainingLimit / 2 / 100) * 100;
 	});
 </script>

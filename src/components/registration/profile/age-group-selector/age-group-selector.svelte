@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
+	import type { TrainerProfile } from '../../../../types/trainer/trainer-profile';
 
 	export let trainerProfile: TrainerProfile;
 	export let ageGroupSelected = false;
@@ -14,6 +14,7 @@
 		class="checkbox"
 		type="checkbox"
 		value="children"
+		id="group.children"
 		bind:group={trainerProfile.ageGroups}
 		on:change={() => ageGroupChanged()}
 	/>
@@ -24,6 +25,7 @@
 		class="checkbox"
 		type="checkbox"
 		value="teenager"
+		id="group.teenager"
 		bind:group={trainerProfile.ageGroups}
 		on:change={() => ageGroupChanged()}
 	/>
@@ -34,6 +36,7 @@
 		class="checkbox"
 		type="checkbox"
 		value="adults"
+		id="group.adults"
 		bind:group={trainerProfile.ageGroups}
 		on:change={() => ageGroupChanged()}
 	/>

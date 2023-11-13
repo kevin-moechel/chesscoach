@@ -1,6 +1,6 @@
 export type TrainerProfile = {
 	name: string;
-	fideRating: string;
+	fideRating: number;
 	chessComUsername: string;
 	lichessOrgUsername: string;
 	ageGroups: Array<string>;

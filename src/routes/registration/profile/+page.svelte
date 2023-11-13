@@ -2,8 +2,8 @@
 	import { Stepper, Step } from '@skeletonlabs/skeleton';
 	import FideTitleSelector from '../../../components/registration/profile/fide-title-selector.svelte';
 	import ProfilePreview from '../../../components/registration/profile/profile-preview.svelte';
-	import EloRangeSlider from '../../../components/registration/profile/elo-range-slider.svelte';
-	import AgeGroupSelector from '../../../components/registration/profile/age-group-selector.svelte';
+	import EloRangeSlider from '../../../components/registration/profile/elo-range-slider/elo-range-slider.svelte';
+	import AgeGroupSelector from '../../../components/registration/profile/age-group-selector/age-group-selector.svelte';
 	import TrainingLocationSelector from '../../../components/registration/profile/training-location-selector.svelte';
 	import TrainerOnlineProfilesInput from '../../../components/registration/profile/trainer-online-profiles-input.svelte';
 	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
