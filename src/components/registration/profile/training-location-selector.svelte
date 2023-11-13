@@ -9,8 +9,13 @@
 		locationComplete = false;
 		let hasLocationPreference = trainerProfile.locationPreferences.length > 0;
 		if (hasLocationPreference) {
-			let hasPhysicalLocation = trainerProfile.location.length > 0;
+			let hasPhysicalLocation =
+				trainerProfile.location != null && trainerProfile.location.length > 0;
 			let hasDistance = trainerProfile.travelTime > 0;
+
+			if (trainerProfile.locationPreferences.includes('remote')) {
+				locationComplete = true;
+			}
 
 			if (trainerProfile.locationPreferences.includes('myLocation')) {
 				locationComplete = hasPhysicalLocation;
@@ -18,10 +23,6 @@
 
 			if (trainerProfile.locationPreferences.includes('yourLocation')) {
 				locationComplete = hasPhysicalLocation && hasDistance;
-			}
-
-			if (trainerProfile.locationPreferences.includes('remote')) {
-				locationComplete = true;
 			}
 		}
 	}

@@ -6,7 +6,7 @@
 	export let trainerProfile: TrainerProfile;
 </script>
 
-<div class="max-w-lg">
+<div class="max-w-lg rounded-md">
 	<img
 		alt="The coach"
 		src="https://media.cnn.com/api/v1/images/stellar/prod/230527051429-03-magnus-carlsen-superbet-rapid-blitz-2023.jpg?c=16x9&q=h_540,w_960,c_fill/f_webp"
