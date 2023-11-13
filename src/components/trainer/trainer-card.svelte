@@ -6,12 +6,13 @@
 	export let trainerProfile: TrainerProfile;
 </script>
 
-<div class="max-w-lg rounded-md">
+<div class="max-w-lg" style="caret-color: transparent">
 	<img
+		class="rounded-t-xl"
 		alt="The coach"
 		src="https://media.cnn.com/api/v1/images/stellar/prod/230527051429-03-magnus-carlsen-superbet-rapid-blitz-2023.jpg?c=16x9&q=h_540,w_960,c_fill/f_webp"
 	/>
-	<div class="flex bg-gray-800 container px-3 py-4 opacity-90">
+	<div class="flex bg-gray-800 container px-3 py-4 opacity-90 rounded-b-xl">
 		<div class="flex items-center space-x-5 grow">
 			{#if trainerProfile.fideTitle != FideTitle.NT}
 				<Avatar
