@@ -23,15 +23,20 @@
 />
 <br />
 
-<input class="input variant-form-material max-w-sm" type="text" placeholder="My FIDE rating is.." />
+<input
+	bind:value={trainerProfile.fideRating}
+	class="input variant-form-material max-w-sm"
+	type="text"
+	placeholder="My FIDE rating is.."
+/>
 <br />
 
 <input
-	class="input variant-form-material max-w-sm"
+	class="input variant-form-material max-w-sm rounded-full"
 	type="text"
 	placeholder="My chess.com username is.."
-	required
 />
+
 <br />
 
 <input

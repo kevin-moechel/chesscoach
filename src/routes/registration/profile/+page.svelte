@@ -9,7 +9,6 @@
 	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
 
 	let trainerProfile = {} as TrainerProfile;
-	trainerProfile.maxTrainingRating = 1500;
 
 	let baseInformationAvailable = false;
 	let ageGroupSelected = false;
