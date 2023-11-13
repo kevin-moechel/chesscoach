@@ -1,4 +1,6 @@
 <script lang="ts">
+	import chesscomIcon from '$lib/assets/chess-pages/chesscom.png';
+	import lichessorgIcon from '$lib/assets/chess-pages/lichessorg.png';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import type { TrainerProfile } from '../../types/trainer/trainer-profile';
 	import { FideTitle } from '../../types/trainer/fide-title';
@@ -29,20 +31,12 @@
 		<div class="flex items-center space-x-5">
 			<div>
 				<a href="www.chess.com" target="_blank">
-					<img
-						class="object-fill h-10 sm:h-12"
-						alt="chess.com profile"
-						src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/PedroPinhata/phpkXK09k.png"
-					/></a
+					<img class="object-fill h-10 sm:h-12" alt="chess.com profile" src={chesscomIcon} /></a
 				>
 			</div>
 			<div>
 				<a href="www.lichess.org" target="_blank">
-					<img
-						class="object-fill h-10 sm:h-12"
-						alt="lichess.org profile"
-						src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Lichess_Logo_2019.svg/800px-Lichess_Logo_2019.svg.png"
-					/></a
+					<img class="object-fill h-10 sm:h-12" alt="lichess.org profile" src={lichessorgIcon} /></a
 				>
 			</div>
 		</div>
