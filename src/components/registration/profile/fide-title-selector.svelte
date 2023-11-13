@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
+	import { FideTitle } from '../../../types/trainer/fide-title';
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
 	export let trainerProfile: TrainerProfile;
@@ -10,23 +11,39 @@
 	<div class="px-8">
 		<div>
 			<RadioGroup>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="CM" value={'CM'}>CM</RadioItem>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="FM" value={'FM'}>FM</RadioItem>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="IM" value={'IM'}>IM</RadioItem>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="GM" value={'GM'}>GM</RadioItem>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.CM} value={FideTitle.CM}
+					>{FideTitle.CM}</RadioItem
+				>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.FM} value={FideTitle.FM}
+					>{FideTitle.FM}</RadioItem
+				>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.IM} value={FideTitle.IM}
+					>{FideTitle.IM}</RadioItem
+				>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.GM} value={FideTitle.GM}
+					>{FideTitle.GM}</RadioItem
+				>
 			</RadioGroup>
 		</div>
 		<div>
 			<RadioGroup>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="WCM" value={'WCM'}>WCM</RadioItem>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="WFM" value={'WFM'}>WFM</RadioItem>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="WIM" value={'WIM'}>WIM</RadioItem>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="WGM" value={'WGM'}>WGM</RadioItem>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.WCM} value={FideTitle.WCM}
+					>{FideTitle.WCM}</RadioItem
+				>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.WFM} value={FideTitle.WFM}
+					>{FideTitle.WFM}</RadioItem
+				>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.WIM} value={FideTitle.WIM}
+					>{FideTitle.WIM}</RadioItem
+				>
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.WGM} value={FideTitle.WGM}
+					>{FideTitle.WGM}</RadioItem
+				>
 			</RadioGroup>
 		</div>
 		<div>
 			<RadioGroup>
-				<RadioItem bind:group={trainerProfile.fideTitle} name="non-titled" value={''}
+				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.NT} value={FideTitle.NT}
 					>Non-Titled Player</RadioItem
 				>
 			</RadioGroup>

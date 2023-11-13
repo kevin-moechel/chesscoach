@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import type { TrainerProfile } from '../../types/trainer/trainer-profile';
+	import { FideTitle } from '../../types/trainer/fide-title';
 
 	export let trainerProfile: TrainerProfile;
 </script>
@@ -12,7 +13,7 @@
 	/>
 	<div class="flex bg-gray-800 container px-3 py-4 opacity-90">
 		<div class="flex items-center space-x-5 grow">
-			{#if trainerProfile.fideTitle.length > 0}
+			{#if trainerProfile.fideTitle != FideTitle.NT}
 				<Avatar
 					initials={trainerProfile.fideTitle}
 					background="bg-red-800"

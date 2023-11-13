@@ -2,19 +2,25 @@
 	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
 
 	export let trainerProfile: TrainerProfile;
-	export let locationComplete = false;
+	export let locationComplete: boolean;
 
 	function locationChanged() {
 		console.log(trainerProfile);
+		locationComplete = false;
+		let hasLocationPreference = trainerProfile.locationPreferences.length > 0;
+		if (hasLocationPreference) {
+			let hasPhysicalLocation = trainerProfile.location.length > 0;
+			let hasDistance = trainerProfile.travelTime > 0;
 
-		if (trainerProfile.locationPreferences.length > 0) {
 			if (trainerProfile.locationPreferences.includes('myLocation')) {
-				if (trainerProfile.location) {
-					locationComplete = trainerProfile.location.length > 0;
-				}
-			} else if (trainerProfile.locationPreferences.includes('yourLocation')) {
-				locationComplete = trainerProfile.travelTime > 0;
-			} else {
+				locationComplete = hasPhysicalLocation;
+			}
+
+			if (trainerProfile.locationPreferences.includes('yourLocation')) {
+				locationComplete = hasPhysicalLocation && hasDistance;
+			}
+
+			if (trainerProfile.locationPreferences.includes('remote')) {
 				locationComplete = true;
 			}
 		}
