@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { TrainerProfile } from '../../../types/trainer/trainer-profile';
-	import { FideTitle } from '../../../types/trainer/fide-title';
+	import { FideTitle } from '../../../../types/trainer/fide-title';
+	import type { TrainerProfile } from '../../../../types/trainer/trainer-profile';
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
 	export let trainerProfile: TrainerProfile;
@@ -10,7 +10,7 @@
 	<div class="font-bold py-4">I'm proud to be a</div>
 	<div class="px-8">
 		<div>
-			<RadioGroup>
+			<RadioGroup class="w-full">
 				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.CM} value={FideTitle.CM}
 					>{FideTitle.CM}</RadioItem
 				>
@@ -25,7 +25,7 @@
 				>
 			</RadioGroup>
 		</div>
-		<div>
+		<div class="w-full py-2">
 			<RadioGroup>
 				<RadioItem bind:group={trainerProfile.fideTitle} name={FideTitle.WCM} value={FideTitle.WCM}
 					>{FideTitle.WCM}</RadioItem

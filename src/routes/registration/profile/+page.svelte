@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Stepper, Step } from '@skeletonlabs/skeleton';
-	import FideTitleSelector from '../../../components/registration/profile/fide-title-selector.svelte';
+	import FideTitleSelector from '../../../components/registration/profile/fide-title-selector/fide-title-selector.svelte';
 	import ProfilePreview from '../../../components/registration/profile/profile-preview.svelte';
 	import EloRangeSlider from '../../../components/registration/profile/elo-range-slider/elo-range-slider.svelte';
 	import AgeGroupSelector from '../../../components/registration/profile/age-group-selector/age-group-selector.svelte';

@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import type { TrainerProfile } from '../../../../types/trainer/trainer-profile';
 import EloRangeSlider from './elo-range-slider.svelte';
 
-describe('AgeGroupSelector', () => {
+describe('EloRangeSelector', () => {
 	it('Should cap the max rating to train to the elo of the player', () => {
 		// arrange
 		const trainerProfile = {} as TrainerProfile;
