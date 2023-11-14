@@ -3,6 +3,16 @@
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import { AppBar } from '@skeletonlabs/skeleton';
+	import posthog from 'posthog-js';
+	import { onMount } from 'svelte';
+
+	// Init Posthog globally
+	onMount(() => {
+		posthog.init('phc_oAodoF3uJ3UjE1rsXu0ymzTETzUFtZzgKD4m6OfCk8G', {
+			api_host: 'https://eu.posthog.com',
+			autocapture: false
+		});
+	});
 </script>
 
 <AppShell>

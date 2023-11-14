@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Stepper, Step } from '@skeletonlabs/skeleton';
+	import posthog from 'posthog-js';
+	import { onMount } from 'svelte';
 	import FideTitleSelector from '../../../components/registration/profile/fide-title-selector/fide-title-selector.svelte';
 	import ProfilePreview from '../../../components/registration/profile/profile-preview/profile-preview.svelte';
 	import EloRangeSlider from '../../../components/registration/profile/elo-range-slider/elo-range-slider.svelte';
@@ -13,10 +15,25 @@
 	let baseInformationAvailable = false;
 	let ageGroupSelected = false;
 	let locationComplete = false;
+
+	onMount(() => {
+		posthog.capture('registration-started');
+	});
+
+	function stepperNext(e: CustomEvent) {
+		posthog.capture('registration-next-step', {
+			currentStep: e.detail.step,
+			nextStep: e.detail.step + 1
+		});
+	}
+
+	function stepperComplete() {
+		posthog.capture('registration-completed');
+	}
 </script>
 
 <div class="container mx-auto p-8 space-y-8">
-	<Stepper>
+	<Stepper on:next={(e) => stepperNext(e)} on:complete={() => stepperComplete()}>
 		<Step locked={!baseInformationAvailable}>
 			<svelte:fragment slot="header">Tell us about yourself</svelte:fragment>
 			<TrainerOnlineProfilesInput bind:trainerProfile bind:baseInformationAvailable />

@@ -17,12 +17,11 @@
 	}
 </script>
 
-<label class="label max-w-sm" for="name"
+<label class="label max-w-sm"
 	><span class="hidden">Your name</span><input
 		class="input variant-form-material max-w-sm"
 		type="text"
 		placeholder="My name is.."
-		id="name"
 		bind:value={trainerProfile.name}
 		on:input={() => checkName()}
 	/></label
@@ -38,22 +37,20 @@
 	/></label
 >
 
-<label class="label max-w-sm" for="chessComUsername"
+<label class="label max-w-sm"
 	><span class="hidden">Chess.com profile</span><input
 		bind:value={trainerProfile.chessComUsername}
 		class="input variant-form-material max-w-sm"
 		type="text"
 		placeholder="My chess.com username is.."
-		id="chessComUsername"
 	/></label
 >
 
-<label class="label max-w-sm" for="lichessOrgUsername"
+<label class="label max-w-sm"
 	><span class="hidden">lichess.org profile</span><input
 		bind:value={trainerProfile.lichessOrgUsername}
 		class="input variant-form-material max-w-sm"
 		type="text"
 		placeholder="My chess.com username is.."
-		id="lichessOrgUsername"
 	/></label
 >
