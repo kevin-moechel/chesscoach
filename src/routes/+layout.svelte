@@ -5,10 +5,11 @@
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import posthog from 'posthog-js';
 	import { onMount } from 'svelte';
+	import { POSTHOG_API_KEY } from '$env/static/private';
 
 	// Init Posthog globally
 	onMount(() => {
-		posthog.init('phc_oAodoF3uJ3UjE1rsXu0ymzTETzUFtZzgKD4m6OfCk8G', {
+		posthog.init(POSTHOG_API_KEY, {
 			api_host: 'https://eu.posthog.com',
 			autocapture: false
 		});
