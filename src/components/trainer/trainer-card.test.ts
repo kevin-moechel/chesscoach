@@ -26,7 +26,6 @@ describe('TrainerCard', () => {
 		trainerProfile.fideTitle = FideTitle.NT;
 		const params = { trainerProfile: trainerProfile };
 		const result = render(TrainerCard, params);
-		console.log(result.debug());
 
 		// act
 		const fideTitleAvatar = result.container.getElementsByClassName('avatar')[0];
