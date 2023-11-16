@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.postcss';
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
@@ -32,12 +32,6 @@
 				<ul>
 					<li>
 						<LightSwitch />
-					</li>
-					<li>
-						<select class="select">
-							<option value="en">en</option>
-							<option value="de">de</option>
-						</select>
 					</li>
 					<li><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
