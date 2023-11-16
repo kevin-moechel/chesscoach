@@ -33,6 +33,12 @@
 					<li>
 						<LightSwitch />
 					</li>
+					<li>
+						<select class="select">
+							<option value="en">en</option>
+							<option value="de">de</option>
+						</select>
+					</li>
 					<li><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
 					<li><a href="/registration/profile">Create profile</a></li>
