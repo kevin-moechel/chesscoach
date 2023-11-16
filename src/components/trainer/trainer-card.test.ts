@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
+import { FideTitle } from '../../types/trainer/fide-title';
 import type { TrainerProfile } from '../../types/trainer/trainer-profile';
 import TrainerCard from './trainer-card.svelte';
 
@@ -8,16 +9,28 @@ describe('TrainerCard', () => {
 		// arrange
 		const trainerProfile = {} as TrainerProfile;
 		trainerProfile.name = 'Test dummy';
-		trainerProfile.fideTitle = 'GM';
+		trainerProfile.fideTitle = FideTitle.GM;
 		const params = { trainerProfile: trainerProfile };
-		render(TrainerCard, params);
+		const result = render(TrainerCard, params);
 
 		// act
-		const nameInput: HTMLInputElement = screen.getByLabelText('Your name', { selector: 'input' });
-		nameInput.value = 'Test name';
-		await fireEvent.input(nameInput);
-
+		const fideTitleAvatar = result.container.getElementsByClassName('avatar')[0];
 		// assert
-		expect(params.trainerProfile.name).toEqual('Test name');
+		expect(fideTitleAvatar).toBeDefined();
+	});
+
+	it('Displays no FIDE title if the trainer has none', async () => {
+		// arrange
+		const trainerProfile = {} as TrainerProfile;
+		trainerProfile.name = 'Test dummy';
+		trainerProfile.fideTitle = FideTitle.NT;
+		const params = { trainerProfile: trainerProfile };
+		const result = render(TrainerCard, params);
+		console.log(result.debug());
+
+		// act
+		const fideTitleAvatar = result.container.getElementsByClassName('avatar')[0];
+		// assert
+		expect(fideTitleAvatar).toBeUndefined();
 	});
 });
